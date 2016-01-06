@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="choose_beast.css"/>
+  </head>
+
+  <body>
+    <div class="yaya">
+      <p>menu</p>
+    </div>
+    <span class="right">
+      <ul>
+        <li class="navbtn shopbtn"><a href="#" id="oui" class="boutons anim">Rejoindre le site</a></li>
+      </ul>
+    </span>
+
+
+
+    <script>
+
+    var element = document.getElementById('oui');
+
+
+    element.addEventListener('click', function() {
+
+      chrome.tabs.query({'title': 'BAMBOO SUCKERS'}, (tabs) => {
+        if (tabs.length === 0) {
+          // There is no catgif tab!
+          chrome.tabs.create({'url': 'http://localhost/Bamboo/zer.php' , 'active': true});
+        } else {
+          // Do something here…
+          chrome.tabs.query({'title': 'BAMBOO SUCKERS', 'active': true}, (active) => {
+            if (active.length === 0) {
+              chrome.tabs.update(tabs[0].id, {'active': true});
+            }
+          });
+        }
+      });
+
+    }, false);
+
+    </script>
+
+  </body>
+
+</html>
