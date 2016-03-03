@@ -25,10 +25,10 @@
 
     element.addEventListener('click', function() {
 
-      chrome.tabs.query({'title': 'BAMBOO SUCKERS'}, (tabs) => {
+      chrome.tabs.query({'title': 'LFAI'}, (tabs) => {
         if (tabs.length === 0) {
           // There is no catgif tab!
-          chrome.tabs.create({'url': 'http://localhost/Bamboo/zer.php' , 'active': true});
+          chrome.tabs.create({'url': 'http://lafabriqueainnovations.com' , 'active': true});
         } else {
           // Do something here…
           chrome.tabs.query({'title': 'BAMBOO SUCKERS', 'active': true}, (active) => {
